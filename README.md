@@ -1,5 +1,27 @@
-# HandwrittenDigitRecognition  
-## Model Architecture  
-Model architecture is hardcoded to be of 2 layers of size 40 and 20.  
-You can change the architecture by passing different values to the gradiant_descent function:  
-![Screenshot from 2025-06-02 12-41-36](https://github.com/user-attachments/assets/6594208c-b920-4a85-b7b7-b43e7da86f52)
+# 📝 Handwritten Digit Recognition Model
+
+Welcome to my **Handwritten Digit Recognition** project! This is a machine learning model I built **from scratch** — without using high-level libraries like TensorFlow or PyTorch. It reads and understands handwritten digits (like those from the MNIST dataset), just like a person would!
+
+## 💡 What This Project Does
+
+This model takes an image of a handwritten digit (from 0 to 9) and predicts which digit it is. Imagine writing a number on paper, taking a picture of it, and the computer tells you exactly what number you wrote — that’s what this does!
+
+## 🧠 How It Works
+
+At its core, this project is a **neural network** — a simplified version of how the human brain works. It learns from thousands of examples of handwritten digits and gets better over time.
+
+By default, the model has:
+- **2 layers**
+- First layer with **40 neurons**
+- Second layer with **20 neurons**
+
+But here’s the cool part — you can change the structure of the model to whatever you want! Just call the `gradient_descent()` function and pass in your own custom list of layer sizes. It’s that flexible.
+
+## ⚙️ Features
+
+- 🧱 Custom-built from scratch (no ML libraries!)
+- 🔁 Trains using gradient descent
+- 🔧 Adjustable number of layers and neurons
+- 🖼️ Works with handwritten digit images (like MNIST)
+
+
