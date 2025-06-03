@@ -8,6 +8,7 @@ Original file is located at
 """
 
 # Commented out IPython magic to ensure Python compatibility.
+# import required libraries
 import numpy as np
 np.seterr(divide = 'ignore', invalid = 'ignore')
 import matplotlib.pyplot as plt
@@ -21,6 +22,8 @@ import seaborn as sns
 import warnings
 warnings.filterwarnings('ignore')
 
+
+# load_data() loads mnist dataset of handwritten digits
 (X_train, Y_train), (X_test, Y_test) = load_data()
 
 def one_hot(Y):
@@ -38,35 +41,35 @@ X_full = np.concatenate((X_train_flattened, X_test_flattened))
 Y_encoded = np.concatenate((Y_train_encoded, Y_test_encoded), axis = 1)
 Y_full = np.concatenate((Y_train, Y_test))
 
-print(X_train_flattened.shape)
-print(Y_train_encoded.shape)
+# print(X_train_flattened.shape)
+# print(Y_train_encoded.shape)
 
-print(X_full.shape)
-print(Y_full.shape)
+# print(X_full.shape)
+# print(Y_full.shape)
 
 unique_vals, counts = np.unique(Y_full, return_counts = True)
-print(unique_vals)
-print(counts)
+# print(unique_vals)
+# print(counts)
 
 sm = SMOTE(random_state = 42)
 
 X_full_smote, Y_full_smote = sm.fit_resample(X_full, Y_full)
 
 unique_vals, counts = np.unique(Y_full_smote, return_counts = True)
-print(unique_vals)
-print(counts)
+# print(unique_vals)
+# print(counts)
 
 X_train_flattened_smote, Y_train_smote = sm.fit_resample(X_train_flattened, Y_train)
 
 unique_vals, counts = np.unique(Y_train, return_counts = True)
-print(unique_vals)
-print(counts)
+# print(unique_vals)
+# print(counts)
 
 unique_vals, counts = np.unique(Y_train_smote, return_counts = True)
-print(unique_vals)
-print(counts)
+# print(unique_vals)
+# print(counts)
 
-plt.matshow(X_train[0])
+# plt.matshow(X_train[0])
 
 def init_params(hidden_layers, layer_strengths):
   W = []
@@ -168,7 +171,7 @@ def gradient_descent(X, Y, alpha, iterations, hidden_layers, layer_strengths):
           print(get_accuracy(predictions, Y_batch))
     return W, B
 
-W_smote, B_smote = gradient_descent(X_train_flattened_smote, Y_train_smote, 0.8, 600, 2, [40, 20]) # from 8:30 min to 3:30 min
+W_smote, B_smote = gradient_descent(X_train_flattened_smote, Y_train_smote, 0.8, 600, 2, [40, 20])
 
 _, outputs_smote = forward_prop(W_smote, B_smote, X_test_flattened.T)
 
