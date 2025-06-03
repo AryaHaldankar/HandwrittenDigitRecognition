@@ -60,11 +60,6 @@ Follow these steps to set up and run this project on your local machine.
    ```bash
    pip install -r requirements.txt
    
-5. **Add the `data/` Folder**
-
-   Download the `data` folder from the provided link [Drive Link](https://drive.google.com/drive/folders/1O_xsb7ZFBCjrQVCkKu9fYOze12fGPXMB?usp=sharing).
-
-   Place the entire `data/` folder inside the root of the project directory — the same directory where your scripts and `requirements.txt` are located.
-6. **Run Script**
+5. **Run Script**
    ```bash
    python3 DigitRecognition.py
